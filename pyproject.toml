@@ -1,0 +1,59 @@
+[project]
+name = "avocado-maturity-ai"
+version = "0.1.0"
+description = "Mobile application for avocado maturity detection using computer vision"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Flet developer", email = "you@example.com" }
+]
+
+dependencies = [
+    "ai-edge-litert>=2.1.6",
+    "email-validator>=2.3.0",
+    "fastapi>=0.129.0",
+    "firebase-admin>=7.3.0",
+    "flet==0.81.0",
+    "flet-camera==0.81.0",
+    "flet-permission-handler>=0.2.0",
+    "flet-video>=0.81.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.2.6",
+    "opencv-python>=4.13.0.92",
+    "openpyxl>=3.1.5",
+    "pillow>=12.1.1",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.22",
+    "reportlab>=5.0.0",
+    "requests>=2.32.5",
+    "scikit-learn>=1.7.2",
+    "tensorflow>=2.21.0",
+    "twilio>=9.10.4",
+    "uvicorn>=0.40.0",
+]
+
+[dependency-groups]
+dev = [
+    "flet-cli>=0.81.0",
+    "flet-desktop>=0.81.0",
+    "flet-web>=0.81.0",
+]
+
+[tool.flet]
+org = "com.mycompany"
+product = "Avoruna"
+company = "Avoruna"
+copyright = "Copyright (C) 2026 Avoruna"
+permissions = ["camera", "microphone"]
+
+[tool.flet.app]
+path = "src"
+
+[tool.flet.android.permission]
+"android.permission.CAMERA" = true
+"android.permission.RECORD_AUDIO" = true
+
+[tool.flet.ios.info]
+NSCameraUsageDescription = "Avoruna necesita acceder a la cámara para analizar la madurez de la palta Hass."
+NSMicrophoneUsageDescription = "Avoruna necesita acceder al micrófono para grabar videos durante el análisis."
